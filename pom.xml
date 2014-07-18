@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.cxf</groupId>
     <artifactId>cxf</artifactId>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.1.e1</version>
     <name>Apache CXF</name>
     <description>Apache CXF is an open-source services framework that aids in 
     the development of services using front-end programming APIs, like JAX-WS 
@@ -48,23 +48,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <site.deploy.url>scp://people.apache.org/www/cxf.apache.org/maven-site</site.deploy.url>
     </properties>
-    <distributionManagement>
-        <repository>
-            <id>apache.releases.https</id>
-            <name>Apache Release Distribution Repository</name>
-            <url>https://repository.apache.org/service/local/staging/deploy/maven2</url>
+     <distributionManagement>
+       <repository>
+            <id>evolveum-nexus</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.evolveum.com/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>apache.snapshots.https</id>
-            <name>Apache Development Snapshot Repository</name>
-            <url>https://repository.apache.org/content/repositories/snapshots</url>
-            <!--uniqueVersion>false</uniqueVersion-->
+            <id>evolveum-nexus</id>
+            <name>Internal Releases</name>
+            <url>http://nexus.evolveum.com/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-        <site>
-            <id>apache.cxf.site</id>
-            <url>${site.deploy.url}</url>
-        </site>
-    </distributionManagement>
+     </distributionManagement>
     <repositories>
         <repository>
             <id>apache.snapshots</id>
