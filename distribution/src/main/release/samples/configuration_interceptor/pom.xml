@@ -128,22 +128,22 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>3.0.1.e1</version>
+            <version>3.0.1.e2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>3.0.1.e1</version>
+            <version>3.0.1.e2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>3.0.1.e1</version>
+            <version>3.0.1.e2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-management</artifactId>
-            <version>3.0.1.e1</version>
+            <version>3.0.1.e2</version>
         </dependency>
     </dependencies>
 </project>

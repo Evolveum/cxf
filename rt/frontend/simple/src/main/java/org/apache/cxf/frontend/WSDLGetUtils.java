@@ -60,7 +60,6 @@ import org.apache.cxf.catalog.OASISCatalogManager;
 import org.apache.cxf.catalog.OASISCatalogManagerHelper;
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.common.util.StringUtils;
-import org.apache.cxf.common.util.UrlUtils;
 import org.apache.cxf.helpers.CastUtils;
 import org.apache.cxf.helpers.DOMUtils;
 import org.apache.cxf.message.Message;
@@ -572,18 +571,18 @@ public class WSDLGetUtils {
                                       SchemaReference imp,
                                       String docBase) {
         String schemaLocationURI = imp.getSchemaLocationURI();
-        if (docBase != null && imp.getReferencedSchema() != null) {
-            try {
-                String baseURI = URLDecoder.decode(UrlUtils.getStem(docBase), "utf-8");
-                String importURI = URLDecoder.decode(imp.getReferencedSchema().getDocumentBaseURI(), "utf-8");
-                if (importURI.contains(baseURI)) {
-                    schemaLocationURI = importURI.substring(baseURI.length() + 1);
-                }
-            } catch (Exception e) {
-                //ignore
-            }
-
-        }
+//        if (docBase != null && imp.getReferencedSchema() != null) {
+//            try {
+//                String baseURI = URLDecoder.decode(UrlUtils.getStem(docBase), "utf-8");
+//                String importURI = URLDecoder.decode(imp.getReferencedSchema().getDocumentBaseURI(), "utf-8");
+//                if (importURI.contains(baseURI)) {
+//                    schemaLocationURI = importURI.substring(baseURI.length() + 1);
+//                }
+//            } catch (Exception e) {
+//                //ignore
+//            }
+//
+//        }
 
         if (imp.getReferencedSchema() != null) {
             for (Map.Entry<String, SchemaReference> e : doneSchemas.entrySet()) {
