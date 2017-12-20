@@ -81,6 +81,28 @@ public class URIResolverTest extends Assert {
         assertNotNull(is3);
     }
 
+    @Test
+    public void testJARResolveBaseAndAbsolute() throws Exception {
+        uriResolver = new URIResolver();
+
+        String uriStr = "jar:" + resourceURL.toString() + "!/wsdl/hello_world.wsdl";
+
+        URL jarURL = new URL(uriStr);
+        InputStream is = jarURL.openStream();
+        assertNotNull(is);
+
+        String uriStr2 = "jar:" + resourceURL.toString() + "!/wsdl/hello_world_2.wsdl";
+
+        URL jarURL2 = new URL(uriStr2);
+        InputStream is2 = jarURL2.openStream();
+        assertNotNull(is2);
+
+        uriResolver.resolve(uriStr, uriStr2, null);
+
+        InputStream is3 = uriResolver.getInputStream();
+        assertNotNull(is3);
+    }
+
 
     @Test
     public void testResolveRelativeFile() throws Exception {

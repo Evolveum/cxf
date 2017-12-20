@@ -112,7 +112,8 @@ public class URIResolver {
         } else if (baseUriStr != null
             && (baseUriStr.startsWith("jar:")
                 || baseUriStr.startsWith("zip:")
-                || baseUriStr.startsWith("wsjar:"))) {
+                || baseUriStr.startsWith("wsjar:"))
+                && !isAbsolute(uriStr)) {
             tryArchive(baseUriStr, uriStr);
         } else if (uriStr.startsWith("jar:")
             || uriStr.startsWith("zip:")
@@ -123,7 +124,13 @@ public class URIResolver {
         }
     }
 
-
+    private boolean isAbsolute(String uriStr) {
+        try {
+            return new URI(uriStr).isAbsolute();
+        } catch (URISyntaxException e) {
+            return false;
+        }
+    }
 
     private void tryFileSystem(String baseUriStr, String uriStr) throws IOException, MalformedURLException {
         try {
