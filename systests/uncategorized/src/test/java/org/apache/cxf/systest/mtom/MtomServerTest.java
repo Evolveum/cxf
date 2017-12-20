@@ -196,7 +196,7 @@ public class MtomServerTest extends AbstractBusClientServerTestBase {
             IOUtils.copy(inAtt.getDataHandler().getInputStream(), out);
             assertTrue("Wrong size: " + out.size()
                     + "\n" + out.toString(),
-                    out.size() > 970 && out.size() < 1020);
+                    out.size() > 970 && out.size() < 1050);
         }
         unregisterServStatic("http://localhost:" + PORT2 + "/policy.xsd");
 
